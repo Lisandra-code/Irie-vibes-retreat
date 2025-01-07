@@ -284,7 +284,18 @@ html {
     left: 69%;
     top: 379%;
 }
-
+/*Timeline page */
+#timeline-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F4E8D9;
+}
+/* Before & after page */
+#before-after-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #7FB069;
+}
 /*CTA page*/
 #CTA-page {
     background-color: #F4E8D9;
