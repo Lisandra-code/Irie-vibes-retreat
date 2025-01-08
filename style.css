@@ -15,6 +15,12 @@
 html {
     scroll-behavior: smooth;
 }
+h2 {
+    font-family: Playfair;
+    text-align: center;
+    font-size: 1.5em;
+   padding: 0.5em;
+}
 /*Home page with parallax scroll effect*/
 .parallax {
     height: 100vh;
