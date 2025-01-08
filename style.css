@@ -15,6 +15,9 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    overflow-x: hidden;
+}
 h2 {
     font-family: Playfair;
     text-align: center;
@@ -70,9 +73,9 @@ h2 {
 }
 /*The beginning page*/
 #the-beginning {
-    height: 200vh;
+    min-height: 200vh;
     width: 100vw;
-    background-color: #F4E8D9;
+    background-color: #abcb9c;
 }
 #the-beginning h2 {
     font-family: Playfair-sc;
@@ -292,15 +295,98 @@ h2 {
 }
 /*Timeline page */
 #timeline-page {
-    width: 100vw;
-    height: 100vh;
+    width: 265vw;
+    height: 265vh;
     background-color: #F4E8D9;
 }
+#timeline-page h2 {
+    text-align: left;
+    margin-left: 43vw;
+    padding-top: 2em;
+}
+/*Timeline container*/
+        .timeline-container {
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .timelinebar {
+            width: 270vw;
+            height: 8vh;
+            position: absolute;
+            background-color: #FFF996;
+            border: 2px solid #7FB069;
+            margin-left: -1em;
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+            margin-left: 1em;
+            position: absolute;
+            top: 5%;
+            height: 100%;
+            width: 265vw;
+            will-change: transform;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 1.5em;
+        }
+        .diamond_arrow_line {
+            position: absolute;
+            top: 6.6%;
+        }
+
+        .timeline-section h3 {
+            font-size: 24px;
+            color: #7FB069; 
+            margin-bottom: 10px;
+            z-index: 2;
+            padding: 0.5em;
+        }
+
+        .timeline-event h4 {
+            font-size: 24px;
+            color: #7FB069;
+            font-family: Playfair-sc;
+            margin-left: 2em;
+            margin-top: 1em;
+        }
+
+        /* Image Container */
+        .image-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 2em;
+        }
+
+        .image-container img {
+            width: 20vw;
+            height: 60vh;
+            border-radius: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+
 /* Before & after page */
 #before-after-page {
     width: 100vw;
     height: 100vh;
     background-color: #7FB069;
+    z-index: 5;
 }
 /*CTA page*/
 #CTA-page {
