@@ -21,14 +21,14 @@ body {
 h2 {
     font-family: Playfair;
     text-align: center;
-    font-size: 1.5em;
-   padding: 0.5em;
+    font-size: 2.5em;
+    padding: 0.5em;
 }
 /*Home page with parallax scroll effect*/
 .parallax {
     height: 100vh;
     width: 100vw;
-    background-image: url('images-irie/Cafe\ in\ Paris.jpeg'); 
+    background-image: url('images-irie/building.jpg'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -80,7 +80,7 @@ h2 {
 #the-beginning h2 {
     font-family: Playfair-sc;
     text-align: center;
-    padding-top: 2em;
+    padding-top: 1.5em;
     color: #1e1e1e;
 }
 .beginning-imagebox-container {
@@ -301,8 +301,8 @@ h2 {
 }
 #timeline-page h2 {
     text-align: left;
-    margin-left: 43vw;
-    padding-top: 2em;
+    margin-left: 41vw;
+    padding-top: 1.5em;
 }
 /*Timeline container*/
         .timeline-container {
@@ -386,8 +386,92 @@ h2 {
     width: 100vw;
     height: 100vh;
     background-color: #7FB069;
-    z-index: 5;
+    transition: height 0.5s ease; /* Smooth height animation */
 }
+#before-after-page.expand {
+    height: 200vh;
+}
+    /*Pile of photos animation*/
+    .photo-pile {
+        position: relative;
+        width: 40vw; 
+        height: 40vh; 
+        cursor: pointer;
+        margin: auto;
+        top: 10%;
+        left: 5%;
+        animation: float 3s ease-in-out infinite; /* Apply the floating animation */
+    }
+    /* Add floating animation to the entire pile */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0); /* Default position */
+        }
+        50% {
+            transform: translateY(-20px); /* Move up slightly */
+        }
+    }
+    /* Photo styles */
+    .photo {
+        position: absolute;
+        width: 100%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid #FFF996;
+        transition: transform 0.5s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+    }
+    .photo-pile img {
+        width: 30vw;
+        height: 60vh;
+    }
+    /* Individual photo initial positions */
+    .photo1 { transform: rotate(2deg); z-index: 1; }
+    .photo2 { transform: rotate(-5deg); z-index: 2; }
+    .photo3 { transform: rotate(7deg); z-index: 3; }
+    .photo4 { transform: rotate(-10deg); z-index: 4; }
+    .photo5 { transform: rotate(5deg); z-index: 5; }
+    
+    /* Hover effect: fan out */
+    .photo-pile.spanned .photo1 { left: -450px; z-index: 1; transform: rotate(0deg); width: 25vw; height: 60vh;}
+    .photo-pile.spanned .photo2 { left: 22px; z-index: 2; transform: rotate(0deg); width: 25vw; height: 60vh;}
+    .photo-pile.spanned .photo3 { left: 500; z-index: 3; transform: rotate(0deg); width: 25vw; height: 60vh;}
+    .photo-pile.spanned .photo4 { left: -300px; top: 600px; z-index: 4; transform: rotate(0deg); width: 25vw; height: 60vh;}
+    .photo-pile.spanned .photo5 { left: 380px; top: 600px; z-index: 5; transform: rotate(0deg); width: 25vw; height: 60vh;}
+
+    /* Hover effect for showing the second image */
+    .photo-container #after-photo-1,  .photo-container #after-photo-2, .photo-container #after-photo-3, .photo-container #after-photo-4, .photo-container #after-photo-5{
+        opacity: 0; /* Hide the after image */
+    }
+    .photo-container #before-photo-1, .photo-container #before-photo-2, .photo-container #before-photo-3, .photo-container #before-photo-4, .photo-container #before-photo-5{
+        opacity: 1; /*Show the first image */
+    }
+    .photo-container:hover #before-photo-1, .photo-container:hover #before-photo-2, .photo-container:hover #before-photo-3, .photo-container:hover #before-photo-4, .photo-container:hover #before-photo-5 {
+        opacity: 0;
+    }
+    .photo-container:hover #after-photo-1,  .photo-container:hover #after-photo-2, .photo-container:hover #after-photo-3, .photo-container:hover #after-photo-4, .photo-container:hover #after-photo-5{
+        opacity: 1;
+    }
+    #reset-button {
+        width: 10vw;
+        height: 3vw;
+        background-color: #FFF996;
+        color: #1e1e1e;
+        font-family: Playfair;
+        border-radius: 30px;
+        padding: 1em;
+        border: none;
+        cursor: pointer;
+        position: sticky;
+        top: 89%;
+        left: 45.8%;
+        margin-bottom: 2em;
+    }
+    /* Show the reset button when the photos are fanned out */
+    #before-after-page .photo-pile.spanned ~ #reset-button {
+        display: block;
+    }
+    #reset-button:hover {
+        background-color: #E6AA68; /* Darker shade on hover */
+    }
 /*CTA page*/
 #CTA-page {
     background-color: #F4E8D9;
@@ -412,9 +496,13 @@ h2 {
     height: 3vw;
     background-color: #7FB069;
     border-radius: 30px;
-    padding: 0.8em 2.5em 2em 2.5em;
+    padding: 0.7em 2.5em 2em 2.5em;
     margin-top: 2em;
     margin-left: 8em;
+    cursor: pointer;
+}
+#CTA-button:hover {
+    background-color: #E6AA68;
 }
 #right-side a {
     text-decoration: none;
