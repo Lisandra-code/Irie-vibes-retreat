@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
 @font-face {
     font-family: "Playfair-sc";
     src: url("/static/PlayfairDisplaySC-Regular.ttf");
@@ -11,6 +12,10 @@
 @font-face {
     font-family: "Playfair";
     src: url("/static/PlayfairDisplay-Regular.ttf");
+}
+@font-face {
+    font-family: "Russo";
+    src: url("/static/RussoOne-Regular.ttf");
 }
 html {
     scroll-behavior: smooth;
@@ -359,6 +364,8 @@ h2 {
             margin-bottom: 10px;
             z-index: 2;
             padding: 0.5em;
+            font-family: Playfair;
+            position: sticky;
         }
 
         .timeline-event h4 {
@@ -383,10 +390,6 @@ h2 {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             z-index: 2;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.02);
         }
 
 /* Before & after page */
@@ -479,6 +482,44 @@ h2 {
     }
     #reset-button:hover {
         background-color: #E6AA68; /* Darker shade on hover */
+    }
+    @keyframes pulseHand {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    /* Apply the pulse animation to the hand icon */
+    #clickable-icon {
+        position: absolute;
+        top: 69%;
+        left: 32%;
+        cursor: pointer;
+        animation: pulseHand 1.5s ease-in-out infinite;  /* Apply pulse animation */
+
+    }
+    #clickable-icon img {
+        width: 5vw;
+        height: 10vh;
+        transform: rotate(45deg);
+    }
+    
+    /* Optional: Make sure the hand icon is visible above other elements */
+    .photo-pile {
+        position: relative;
+    }
+    
+    #clickable-icon {
+        z-index: 10;  /* Ensure it's above the photo pile */
     }
 /*CTA page*/
 #CTA-page {
