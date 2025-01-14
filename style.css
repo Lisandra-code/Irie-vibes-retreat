@@ -23,12 +23,6 @@ html {
 body {
     overflow-x: hidden;
 }
-h2 {
-    font-family: Playfair;
-    text-align: center;
-    font-size: 2.5em;
-    padding: 0.5em;
-}
 /*Home page with parallax scroll effect*/
 .parallax {
     height: 100vh;
@@ -40,16 +34,19 @@ h2 {
     position: relative;
     z-index: 1;
 }
-#home-page2 h2 {
+/*#home-page2 h2 {
    font-family: Playfair !important; 
    font-size: 1.5em;
    padding: 0.5em;
    color: #87623A;
    text-align: left;
-}
+}*/
 #irielogo  img{
-   width: 25%;
-   padding: 1em;
+   width: 16%;
+   position: absolute;
+   top:-6%;
+   left:-3%;
+
 }
 #introcontainer-yellowbox {
     width: 30%;
@@ -78,17 +75,62 @@ h2 {
     color: #87623A;
     padding: 0.3em;
 }
+.green-yellowbox h1 {
+    font-family: Playfair-sc;
+    font-size: 3em;
+    color: #4A683C;
+    position: absolute;
+    top: 34%;
+    text-wrap: wrap;
+    padding: 5em 5em;
+}
+.green-yellowbox h2 {
+    text-align: left;
+    font-family: Playfair;
+    font-size: 2em;
+    color: #4A683C;
+    position: absolute;
+    top: 37%;
+    left: 17%;
+    text-wrap: wrap;
+    width: 46%;
+    z-index: 100;
+}
+.green-yellowbox h3 {
+    color: #4A683C;
+    font-family: Playfair;
+    font-size: 2.5em;
+    position: absolute;
+    top: 48%;
+    left: 30%;
+}
+#brush-stroke1 {
+    position: absolute;
+    bottom: -38%;
+    left: 7%;
+    width: 60vw;
+    height: 117vh;
+}
+#brush-stroke2 {
+    position: absolute;
+    bottom: -36%;
+    left: 7%;
+    width: 65vw;
+    height: 80vw;
+}
 /*The beginning page*/
 #the-beginning {
-    min-height: 200vh;
+    min-height: 235vh;
     width: 100vw;
-    background-color: #abcb9c;
+    background-color: #4A683C;
+    scroll-behavior: smooth;
 }
 #the-beginning h2 {
-    font-family: Playfair-sc;
+    font-family: Playfair;
     text-align: center;
     padding-top: 1.5em;
-    color: #1e1e1e;
+    color: #EFE4D2;
+    font-size: 2.5em;
 }
 .beginning-imagebox-container {
     display: flex;
@@ -185,7 +227,7 @@ h2 {
     border-radius: 30px;
     position: absolute;
     left: 9%;
-    top: 324%;
+    top: 337%;
 }
 .greenbox4 {
     width: 20%;
@@ -196,11 +238,11 @@ h2 {
     position: absolute;
     z-index: 2;
     left: 11%;
-    top: 320%;
+    top: 333%;
 }
 #imagebox4 {
     left: 13%;
-    top: 318%;
+    top: 331%;
 }
 .yellowbox5 {
     width: 18%;
@@ -210,7 +252,7 @@ h2 {
     border-radius: 30px;
     position: absolute;
     left: 41%;
-    top: 324%;
+    top: 337%;
 }
 .greenbox5 {
     width: 18%;
@@ -221,11 +263,11 @@ h2 {
     position: absolute;
     z-index: 2;
     left: 41%;
-    top: 320%;
+    top: 333%;
 }
 #imagebox5 {
     left: 41%;
-    top: 318%;
+    top: 331%;
 }
 .yellowbox6 {
     width: 20%;
@@ -235,7 +277,7 @@ h2 {
     border-radius: 30px;
     position: absolute;
     right: 9%;
-    top: 324%;
+    top: 337%;
 }
 .greenbox6 {
     width: 20%;
@@ -246,17 +288,17 @@ h2 {
     position: absolute;
     z-index: 2;
     right: 11%;
-    top: 320%;
+    top: 333%;
 }
 #imagebox6 {
     right: 13%;
-    top: 318%;
+    top: 331%;
 }
 .greenline {
     width: 0.3vw;
     height: 5vh;
     margin-right: 1em;
-    background-color: #7FB069;
+    background-color: #B4F796;
 }
 .hover-content {
     position: absolute;
@@ -274,10 +316,13 @@ h2 {
     width: 20vw;
     text-wrap: wrap;
     text-align: justify;
+    color: #EFE4D2;
+    font-size: 17px;
 }
 .beginning-imagebox:hover .hover-content{
     bottom: 0; /* Slide up to appear */
     opacity: 1;
+    transition: all 0.5s ease-in-out;
 }
 .beginning-imagebox {
     cursor: pointer;
@@ -296,26 +341,29 @@ h2 {
 }
 #content4 {
     left: 9%;
-    top: 379%;
+    top: 390%;
 }
 #content5 {
     left: 41%;
-    top: 379%;
+    top: 390%;
 }
 #content6 {
     left: 69%;
-    top: 379%;
+    top: 390%;
 }
 /*Timeline page */
 #timeline-page {
     width: 265vw;
     height: 265vh;
     background-color: #F4E8D9;
+    scroll-snap-type: mandatory;
 }
 #timeline-page h2 {
     text-align: left;
     margin-left: 41vw;
     padding-top: 1.5em;
+    font-size: 2.5em;
+    font-family: Playfair;
 }
 /*Timeline container*/
         .timeline-container {
@@ -396,8 +444,16 @@ h2 {
 #before-after-page {
     width: 100vw;
     height: 100vh;
-    background-color: #7FB069;
+    background-color: #4A683C;
+    background-size: cover;
     transition: height 0.5s ease; /* Smooth height animation */
+}
+#before-after-page h2 {
+    font-family: Playfair;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 0.5em;
+    color:#F4E8D9;
 }
 #before-after-page.expand {
     height: 200vh;
@@ -530,7 +586,7 @@ h2 {
     width: 100vw; 
 }
 #left-side img{
-    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
     width: 50vw;
     height: 100vh;
 }
@@ -540,13 +596,17 @@ h2 {
     padding: 10em; 
     font-family: Playfair;
 }
+#right-side span{
+    font-size: 2em;
+    font-style: italic;
+}
 #CTA-button {
     width: 10vw;
     height: 3vw;
     background-color: #7FB069;
     border-radius: 30px;
     padding: 0.7em 2.5em 2em 2.5em;
-    margin-top: 2em;
+    margin-top: 6em;
     margin-left: 8em;
     cursor: pointer;
 }

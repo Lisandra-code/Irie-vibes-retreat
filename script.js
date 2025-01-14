@@ -25,6 +25,8 @@
         scrollSection.style.transform = `translate3d(${translateX}px, 0, 0)`;
     }
 
+
+ //Before and after page, pile of photos animation   
     document.addEventListener('DOMContentLoaded', () => {
         // Get references to the elements
         const pageContainer = document.querySelector('#before-after-page');
