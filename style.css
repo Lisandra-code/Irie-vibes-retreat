@@ -586,7 +586,7 @@ body {
     width: 100vw; 
 }
 #left-side img{
-    border-top-right-radius: 500px;
+    border-top-right-radius: 400px;
     width: 50vw;
     height: 100vh;
 }
