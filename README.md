@@ -1,6 +1,6 @@
 # Irie Vibes Retreat
 
-This project is a dynamic webpage that incorporates two main features:
+This project is a webpage that incorporates two main features:
 
 Sticky Horizontal Timeline Animation: A scroll-based animation that moves a timeline horizontally as the user scrolls down the page.
 Before/After Photo Animation: A photo pile that expands and fans out on click, with the option to reset the view.
